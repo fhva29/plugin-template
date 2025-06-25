@@ -1,0 +1,14 @@
+[project]
+name = "plugin-template"
+version = "0.1.0"
+description = "A sample plugin for the Wellnova platform"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.115.13",
+    "uvicorn>=0.34.3",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

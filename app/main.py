@@ -14,22 +14,36 @@ def metadata():
     return {
         "name": "Example Plugin",
         "version": "1.0.0",
-        "description": "This is an example plugin.",
-        "developer": {"name": "Your Company", "contact_email": "you@example.com"},
-        "frontend": {"url": "http://localhost:8000", "embed": True},
+        "frontend": {
+            "url": "http://localhost:8000",
+            "embed": True,
+        },
+        "developer": {
+            "name": "Dev Ltda",
+            "contact_email": "dev@empresa.com",
+        },
         "endpoints": [
-            {"path": "/example", "methods": ["GET"], "description": "Example endpoint"},
-            {
-                "path": "/hello",
-                "methods": ["GET"],
-                "description": "Returns a greeting message",
-            },
             {
                 "path": "/sum",
                 "methods": ["POST"],
-                "description": "Receives two numbers and returns their sum",
-            },
+                "description": "Soma dois números",
+                "request_schema": {
+                    "type": "object",
+                    "required": ["a", "b"],
+                    "properties": {
+                        "a": {
+                            "type": "integer",
+                            "description": "Primeiro número",
+                        },
+                        "b": {
+                            "type": "integer",
+                            "description": "Segundo número",
+                        },
+                    },
+                },
+            }
         ],
+        "description": "Plugin de exemplo",
         "auth_required": False,
     }
 
